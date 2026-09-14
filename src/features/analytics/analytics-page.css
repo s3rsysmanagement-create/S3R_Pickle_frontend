@@ -1,0 +1,121 @@
+/* =========================================================
+   ANALYTICS FILTER
+   ========================================================= */
+
+.analytics-filter-card {
+  width: 100%;
+}
+
+.analytics-filter-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.analytics-filter-content h3 {
+  margin: 0 0 4px;
+}
+
+.analytics-filter-content p {
+  margin: 0;
+  color: var(--text-muted, #6b7280);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   PERIOD SELECTOR
+   ========================================================= */
+
+.analytics-period-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.analytics-period-btn {
+  min-width: 90px;
+  padding: 9px 16px;
+  border: none !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #6b7280 !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.analytics-period-btn:hover {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.analytics-period-btn.active {
+  background: #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   CHART HEADER
+   ========================================================= */
+
+.chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chart-header h3 {
+  margin-bottom: 4px;
+}
+
+.chart-subtitle {
+  margin: 0;
+  margin-top: 4px;
+  color: var(--text-muted, #6b7280);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .analytics-filter-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .analytics-period-selector {
+    width: 100%;
+  }
+
+  .analytics-period-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .analytics-filter-content {
+    gap: 16px;
+  }
+
+  .analytics-period-btn {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+}

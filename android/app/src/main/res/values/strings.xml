@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">S3R Dinkers Management</string>
+    <string name="title_activity_main">S3R Dinkers Management</string>
+    <string name="package_name">com.S3R.pickleball</string>
+    <string name="custom_url_scheme">com.S3R.pickleball</string>
+</resources>

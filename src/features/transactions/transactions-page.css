@@ -1,0 +1,666 @@
+/* ============================================================
+   PLAYER PAYMENTS
+   ============================================================ */
+
+.payments-container {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+
+/* ============================================================
+   DAILY LIST
+   ============================================================ */
+
+.payments-list {
+  width: 100%;
+}
+
+
+.payment-day {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.payment-day:last-child {
+  border-bottom: 0;
+}
+
+
+/* ============================================================
+   DAY HEADER
+   ============================================================ */
+
+.payment-day-row {
+  display: grid;
+
+  /*
+   * Date takes most of the available space.
+   * Player count, total and action stay aligned.
+   */
+  grid-template-columns:
+    minmax(260px, 1fr)
+    150px
+    160px
+    100px;
+
+  align-items: center;
+
+  min-height: 72px;
+
+  padding: 0 24px;
+
+  column-gap: 24px;
+
+  transition:
+    background-color 0.15s ease;
+}
+
+
+.payment-day-row:hover {
+  background: var(--panel-alt);
+}
+
+
+.payment-day-expanded
+  .payment-day-row {
+  background: var(--panel-alt);
+}
+
+
+/* ============================================================
+   DAY TOGGLE
+   ============================================================ */
+
+.payment-day-toggle {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #111827;
+
+  font: inherit;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.payment-day-toggle:hover {
+  color: #2563eb;
+}
+
+
+.payment-day-chevron {
+  display: inline-flex;
+
+  width: 18px;
+  height: 18px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 11px;
+
+  color: var(--muted);
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.payment-day-chevron.expanded {
+  transform: rotate(90deg);
+  color: #2563eb;
+}
+
+
+.payment-day-date {
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   PLAYER COUNT
+   ============================================================ */
+
+.payment-day-players {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  white-space: nowrap;
+
+  color: var(--muted);
+}
+
+
+.payment-day-number {
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+.payment-day-label {
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   DAILY TOTAL
+   ============================================================ */
+
+.payment-day-total {
+  text-align: right;
+
+  white-space: nowrap;
+
+  color: #111827;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   VIEW BUTTON
+   ============================================================ */
+
+.payment-view-button {
+  justify-self: end;
+
+  min-width: 76px;
+
+  border-radius: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   EXPANDED CONTENT
+   ============================================================ */
+
+.payment-day-details {
+  padding: 0 24px 24px;
+
+  background: var(--panel-alt);
+}
+
+
+.payment-table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  background: var(--panel);
+}
+
+
+/* ============================================================
+   PLAYER TABLE
+   ============================================================ */
+
+.payment-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 650px;
+}
+
+
+.payment-table thead {
+  background: var(--panel-alt);
+}
+
+
+.payment-table th {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  text-align: left;
+}
+
+
+.payment-table td {
+  padding: 14px 16px;
+
+  border-bottom: 1px solid var(--panel-alt);
+
+  color: #334155;
+
+  font-size: 14px;
+}
+
+
+.payment-table tbody tr {
+  transition:
+    background-color 0.15s ease;
+}
+
+
+.payment-table tbody tr:hover {
+  background: var(--panel-alt);
+}
+
+
+.payment-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* ============================================================
+   PLAYER
+   ============================================================ */
+
+.payment-player {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.payment-player-avatar {
+  display: flex;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.payment-player div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.payment-player strong {
+  color: #111827;
+
+  font-size: 14px;
+}
+
+
+.payment-player small {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   COURT
+   ============================================================ */
+
+.payment-court {
+  color: #475569;
+
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   PAYMENT METHOD
+   ============================================================ */
+
+.payment-method {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 4px 9px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 6px;
+
+  background: var(--panel-alt);
+
+  color: #475569;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   AMOUNT
+   ============================================================ */
+
+.payment-amount {
+  color: #111827;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE FOOTER
+   ============================================================ */
+
+.payment-table tfoot {
+  background: var(--panel-alt);
+}
+
+
+.payment-table tfoot td {
+  padding: 14px 16px;
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 0;
+}
+
+
+.payment-total-label {
+  color: var(--muted) !important;
+
+  font-size: 13px !important;
+
+  font-weight: 600 !important;
+
+  text-align: right;
+}
+
+
+.payment-total-value {
+  color: #111827 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+.payments-pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+
+.pagination-pages {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.pagination-button {
+  min-width: 96px;
+
+  height: 40px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  white-space: nowrap;
+}
+
+
+.pagination-number {
+  display: inline-flex;
+
+  width: 38px;
+  height: 38px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+
+.pagination-number:hover {
+  background: var(--panel-alt);
+
+  color: #334155;
+}
+
+
+.pagination-number.active {
+  border-color: #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+.pagination-info {
+  margin-top: -2px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .payment-day-row {
+    grid-template-columns:
+      minmax(180px, 1fr)
+      90px
+      110px
+      80px;
+
+    padding: 0 16px;
+
+    column-gap: 12px;
+  }
+
+  .payment-day-details {
+    padding: 0 16px 16px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .payment-day-row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      120px
+      80px;
+
+    column-gap: 12px;
+    padding: 0 16px;
+  }
+
+  .payment-day-players {
+    display: none;
+  }
+
+  .payment-table {
+    min-width: 720px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .payment-day-row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    grid-template-areas:
+      "date action"
+      "players total";
+
+    row-gap: 8px;
+
+    padding: 16px;
+  }
+
+
+  .payment-day-toggle {
+    grid-area: date;
+  }
+
+
+  .payment-view-button {
+    grid-area: action;
+  }
+
+
+  .payment-day-players {
+    grid-area: players;
+  }
+
+
+  .payment-day-total {
+    grid-area: total;
+
+    text-align: right;
+  }
+
+
+  .payments-pagination {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .pagination-pages {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .payment-day-date {
+    font-size: 14px;
+  }
+
+
+  .payment-day-total {
+    font-size: 14px;
+    display: none;
+  }
+
+
+  .payment-day-toggle {
+    font-size: 14px;
+  }
+
+
+  .pagination-button {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .payment-day-details {
+    padding: 0 12px 12px;
+  }
+
+  .payment-table {
+    min-width: 650px;
+  }
+
+}

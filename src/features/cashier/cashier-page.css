@@ -1,0 +1,342 @@
+/* =========================================================
+   CASHIER PAGE LAYOUT
+   ========================================================= */
+
+.cashier-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.cashier-checkout-grid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+}
+
+.cashier-section-card {
+  min-width: 0;
+}
+
+.cashier-players-card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.cashier-session-card {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.cashier-review-card {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+}
+
+.cashier-payments-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cashier-payments-toolbar {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cashier-payment-table-wrapper .data-table {
+  min-width: 920px;
+}
+
+/* =========================================================
+   PLAYER ROW
+   ========================================================= */
+
+.selected-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name action"
+    "rates rates";
+  align-items: start;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--panel-alt);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.selected-row:hover {
+  border-color: #cbd5e1;
+  box-shadow:
+    0 2px 10px
+    rgba(15, 23, 42, 0.05);
+}
+
+/* Prevent long names from pushing outside the container */
+.selected-row > span,
+.selected-row > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.selected-player-header {
+  grid-area: name;
+  min-width: 0;
+}
+
+/* =========================================================
+   PLAYER NAME
+   ========================================================= */
+
+.selected-row strong {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.selected-player-name {
+  margin: 0;
+  padding-top: 0.35rem;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   SELECT / INPUT
+   ========================================================= */
+
+.selected-row .field {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.cashier-quick-add {
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+  background: var(--panel-alt);
+}
+
+.cashier-player-input {
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cashier-player-input:focus {
+  border-color: rgba(15, 118, 110, 0.6);
+  box-shadow:
+    0 0 0 3px
+    rgba(15, 118, 110, 0.14);
+}
+
+.selected-list {
+  width: 100%;
+  max-width: 100%;
+}
+
+.player-rate-options {
+  grid-column: 1 / -1;
+  grid-area: rates;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: .6rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.player-rate-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--panel);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.player-rate-option:hover {
+  border-color: #cbd5e1;
+}
+
+.player-rate-option.is-selected {
+  border-color: rgba(15, 118, 110, 0.45);
+  background: rgba(15, 118, 110, 0.08);
+  box-shadow:
+    0 0 0 1px
+    rgba(15, 118, 110, 0.1);
+}
+
+.player-rate-option input {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #0f766e;
+}
+
+.player-rate-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.player-rate-label strong {
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.player-rate-label span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* =========================================================
+   PAYMENT STATUS  (uses global .status-paid / .status-unpaid)
+   ========================================================= */
+
+.payment-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  max-width: 100%;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.payment-status.paid {
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
+}
+
+.payment-status.unpaid {
+  background: rgba(220, 38, 38, 0.08);
+  color: #991b1b;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.selected-row button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.selected-row .link-btn {
+  grid-area: action;
+  align-self: start;
+  justify-self: end;
+  max-width: 100%;
+  white-space: normal;
+  text-align: right;
+}
+
+/* =========================================================
+   SMALLER SCREENS
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .cashier-checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cashier-players-card,
+  .cashier-session-card,
+  .cashier-review-card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .cashier-payments-toolbar {
+    padding: 0.9rem 1rem;
+  }
+
+  .cashier-payments-toolbar .inline-actions {
+    width: 100%;
+  }
+
+  .cashier-payments-toolbar .btn-danger {
+    width: 100%;
+  }
+
+  .selected-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "rates"
+      "action";
+    gap: 8px;
+  }
+
+  .selected-row .link-btn {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .cashier-player-input {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cashier-payments-toolbar {
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .cashier-payment-table-wrapper .data-table {
+    min-width: 760px;
+  }
+
+  .selected-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .payment-status {
+    width: fit-content;
+  }
+
+  .selected-row button {
+    width: 100%;
+  }
+
+  .player-rate-options {
+    grid-template-columns: 1fr;
+  }
+}

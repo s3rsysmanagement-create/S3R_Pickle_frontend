@@ -1,0 +1,190 @@
+/* =========================================================
+   DELETE CONFIRMATION MODAL
+   (overlay + modal-box styles are in src/index.css)
+   ========================================================= */
+
+
+/* =========================================================
+   MODAL ANIMATION
+   ========================================================= */
+
+.delete-modal {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 28px;
+
+  border-radius: 16px;
+
+  background: var(--panel);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+
+  animation: modalIn 0.2s ease-out;
+}
+
+
+/* =========================================================
+   WARNING ICON
+   ========================================================= */
+
+.delete-modal-icon {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fee2e2;
+  color: var(--danger);
+
+  font-size: 26px;
+  font-weight: 700;
+}
+
+
+.delete-modal-icon span {
+  display: block;
+
+  width: 26px;
+  height: 26px;
+
+  border: 2px solid var(--danger);
+  border-radius: 50%;
+
+  text-align: center;
+  line-height: 22px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.delete-modal-content {
+  text-align: center;
+}
+
+
+.delete-modal-content h3 {
+  margin: 0 0 10px;
+
+  color: #111827;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.delete-modal-content p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+.delete-modal-content strong {
+  color: #111827;
+}
+
+
+.delete-modal-warning {
+  margin-top: 8px !important;
+
+  color: var(--danger) !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+
+.delete-modal-actions button {
+  min-width: 110px;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.btn-cancel {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+
+  border: 1px solid var(--line) !important;
+}
+
+
+.btn-cancel:hover {
+  background: var(--line) !important;
+}
+
+
+/* =========================================================
+   DANGER BUTTON
+   ========================================================= */
+
+.delete-modal-actions .btn-danger {
+  background: var(--danger) !important;
+  color: #ffffff !important;
+
+  border: 1px solid var(--danger) !important;
+}
+
+
+.delete-modal-actions .btn-danger:hover {
+  background: var(--primary-strong) !important;
+  border-color: var(--primary-strong) !important;
+}
+
+
+.delete-modal-actions .btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .modal-overlay {
+    padding: 16px;
+  }
+
+  .delete-modal {
+    padding: 22px;
+  }
+
+  .delete-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .delete-modal-actions button {
+    width: 100%;
+  }
+}

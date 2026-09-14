@@ -1,0 +1,815 @@
+/* =========================================================
+   PLAYERS PAGE
+   ========================================================= */
+
+.players-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.players-filter-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 20px 22px;
+
+  box-sizing: border-box;
+}
+
+.players-filter-controls {
+  display: flex;
+  align-items: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  flex: 1;
+}
+
+.players-filter-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.players-filter-field label {
+  color: #0b2545;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.players-filter-field input {
+  min-width: 190px;
+}
+
+.players-search-field input {
+  width: 300px;
+}
+
+.players-clear-button {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.players-summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.players-summary-card {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 18px 20px;
+}
+
+.players-summary-card span {
+  color: var(--muted);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.players-summary-card strong {
+  color: #0b2545;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HISTORY LIST
+   ========================================================= */
+
+.players-history-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   DAY CARD
+   ========================================================= */
+
+.players-day-card {
+  width: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  background: var(--panel);
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px
+    rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   DAY HEADER
+   ========================================================= */
+
+.players-day-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 94px;
+
+  padding: 22px 26px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.players-day-header h2 {
+  margin: 0;
+
+  color: #0b2545;
+
+  font-size: 21px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.players-day-header p {
+  margin: 6px 0 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.players-day-total {
+  color: #0b2545;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.players-grid {
+  width: 100%;
+}
+
+
+/* =========================================================
+   GRID HEADER
+   ========================================================= */
+
+.players-grid-header {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    minmax(180px, 1fr)
+    130px
+    130px
+    140px
+    130px
+    100px
+    170px;
+
+  align-items: center;
+
+  min-height: 46px;
+
+  padding: 0 26px;
+
+  box-sizing: border-box;
+
+  background: var(--panel-alt);
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   GRID ROW
+   ========================================================= */
+
+.players-grid-row {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    minmax(180px, 1fr)
+    130px
+    130px
+    140px
+    130px
+    100px
+    170px;
+
+  align-items: center;
+
+  min-height: 70px;
+
+  padding: 10px 26px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--line);
+
+  background: var(--panel);
+
+  transition:
+    background-color 0.15s ease;
+}
+
+.players-grid-row:hover {
+  background: #fafcfd;
+}
+
+.players-grid-row:last-child {
+  border-bottom: none;
+}
+
+.players-grid-row.is-editing {
+  background: var(--panel-alt);
+}
+
+
+/* =========================================================
+   INDEX
+   ========================================================= */
+
+.players-index {
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
+
+.players-player-cell {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+
+  gap: 3px;
+}
+
+.players-player-cell strong {
+  overflow: hidden;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.players-player-cell span {
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   COURT
+   ========================================================= */
+
+.players-court-cell {
+  color: #475569;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   PAYMENT
+   ========================================================= */
+
+.players-payment-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 5px 9px;
+
+  border-radius: 7px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   AMOUNT
+   ========================================================= */
+
+.players-amount-cell {
+  color: #0f172a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.players-grid-header > div:nth-child(5) {
+  text-align: left;
+}
+
+.players-grid-header > div:nth-child(6) {
+  text-align: right;
+}
+
+.players-rate-cell {
+  color: #475569;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.players-rate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.players-rate-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.players-rate-loading {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.players-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 58px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.players-status-paid {
+  background: #e8f7f3;
+
+  color: #087f6b;
+}
+
+.players-status-unpaid {
+  background: #fff1f1;
+
+  color: #c53030;
+}
+
+.players-status-cancelled {
+  background: #f1f5f9;
+
+  color: #475569;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.players-action-cell {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.players-edit-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+}
+
+.players-cancel-button {
+  border: none;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.players-cancel-button:hover {
+  color: #0b2545;
+}
+
+
+/* =========================================================
+   EDIT INPUT
+   ========================================================= */
+
+.players-edit-input {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DAY FOOTER
+   ========================================================= */
+
+.players-day-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 22px;
+
+  min-height: 62px;
+
+  padding: 0 26px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.players-day-footer strong {
+  color: #0b2545;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.players-pagination-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+}
+
+.players-pagination-info {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.players-pagination-info strong {
+  color: #0b2545;
+
+  font-weight: 700;
+}
+
+.players-pagination {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.players-pagination-button {
+  min-width: 96px;
+
+  white-space: nowrap;
+}
+
+.players-page-number {
+  min-width: 82px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.players-page-number strong {
+  color: #0b2545;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.players-loading {
+  min-height: 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.players-error-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px;
+}
+
+.players-edit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.players-active-checkbox {
+  margin-bottom: 10px;
+}
+
+.players-cell-input {
+  min-width: 160px;
+}
+
+.players-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .players-grid {
+    overflow-x: auto;
+  }
+
+  .players-grid-header,
+  .players-grid-row {
+    min-width: 980px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .players-edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .players-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .players-filter-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .players-filter-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .players-search-field input {
+    width: 100%;
+  }
+
+  .players-filter-field input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .players-day-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .players-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .players-day-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .players-day-total {
+    font-size: 18px;
+  }
+
+  .players-grid {
+    overflow-x: auto;
+  }
+
+  .players-grid-header,
+  .players-grid-row {
+    min-width: 980px;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+
+  .players-day-footer {
+    padding: 0 20px;
+  }
+
+  .players-pagination-card {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .players-pagination {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .players-pagination-button {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .players-error-card {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+}
